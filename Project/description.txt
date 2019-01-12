@@ -1,0 +1,10 @@
+We were provided a simulated dataset of single nucleotide polymorphism (SNP) genotype data containing 29623 SNPs (total features). Amongst all SNPs are 15 causal ones which means they and neighboring ones discriminate between case and controls while remainder are noise. In the training are 4000 cases and 4000 controls. 
+
+My task is to predict the labels of 2000 test individuals whose true labels are known only to our professor. The goal is not only to predict true labels of the test data set with the highest accuracy but also using fewest number of features. The project code is written in Python. 
+
+Both datasets and labels files are as follows:
+The training dataset - traindata.gz 
+training labels – trueclass
+test dataset - testdata.gz
+
+I wrote code for Pearson Correlation to select top 15 features and used SVM module from python’s sklearn package to do the final classification.
