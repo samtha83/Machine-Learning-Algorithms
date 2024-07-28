@@ -85,32 +85,35 @@ class K_Means:
 
 
 #***************************Main Program*******************************************************************************************    
-datafile= sys.argv[1]
-f = open(datafile,'r')
-#f = open("datafile.txt")
-
-no_clusters = int(sys.argv[2])
-#no_clusters=4
-
-data = []
-i=0;
-l= f.readline()
-while(l!=''):
-    a = l.split()
-    l2 = []
-    for j in range(0, len(a), 1):
-        l2.append(a[j])      
-    data.append(l2)
-    #data[i].append(1)
-    i=i+1;
-    l = f.readline()
+if __name__=='__main__':
     
-rows = len(data)
-cols = len(data[0])
-#print(data)
-#print("row=", rows, "cols= ", cols)
-#for i in range(0,rows,1):
-#    print(data[i])
 
-km = K_Means(3)
-km.fit(data,no_clusters)
+    datafile= sys.argv[1]
+    f = open(datafile,'r')
+    #f = open("datafile.txt")
+    
+    no_clusters = int(sys.argv[2])
+    #no_clusters=4
+    
+    data = []
+    i=0;
+    l= f.readline()
+    while(l!=''):
+        a = l.split()
+        l2 = []
+        for j in range(0, len(a), 1):
+            l2.append(a[j])      
+        data.append(l2)
+        #data[i].append(1)
+        i=i+1;
+        l = f.readline()
+        
+    rows = len(data)
+    cols = len(data[0])
+    #print(data)
+    #print("row=", rows, "cols= ", cols)
+    #for i in range(0,rows,1):
+    #    print(data[i])
+    
+    km = K_Means(3)
+    km.fit(data,no_clusters)
